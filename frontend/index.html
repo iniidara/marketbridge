@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketBridge — Turn Reputation into Opportunity</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-accent">Market</span>Bridge
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <button class="btn btn-secondary" disabled>Login</button>
+                <button class="btn btn-primary" disabled>Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <span class="badge">MVP Phase 1 — Infrastructure Verification</span>
+            <h1>Turn informal trust into formal financial opportunity</h1>
+            <p class="subtitle">MarketBridge enables informal traders to establish verifiable digital reputations using community validation and deterministic trust scoring.</p>
+            
+            <div class="cta-group">
+                <button class="btn btn-primary btn-large" disabled>Create Your Profile</button>
+                <a href="#system-health" class="btn btn-outline btn-large">Check Connection</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- System Connection Verification (Core functionality for Phase 1) -->
+    <section id="system-health" class="system-section">
+        <div class="container">
+            <div class="status-card">
+                <div class="status-header">
+                    <h3>Connection Center</h3>
+                    <div id="status-badge" class="status-badge status-loading">
+                        <span class="pulse-dot"></span>
+                        <span id="status-text">Testing setup...</span>
+                    </div>
+                </div>
+                <p class="status-desc">This live monitoring card establishes direct secure handshakes with the MarketBridge FastAPI server to verify local routing and Supabase PostgreSQL credentials.</p>
+                
+                <div class="status-details">
+                    <div class="status-item">
+                        <span class="label">Backend Server:</span>
+                        <span id="backend-status" class="value text-warning">Waiting</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Database Connection:</span>
+                        <span id="db-status" class="value text-warning">Waiting</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">API Latency:</span>
+                        <span id="api-latency" class="value">--</span>
+                    </div>
+                </div>
+
+                <div class="status-actions">
+                    <button id="btn-retry-health" class="btn btn-secondary">Force Re-Ping System</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Built on clear, explainable infrastructure</h2>
+                <p>Designed for market sellers, artisans, and microfinance institutions.</p>
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h4>Deterministic Trust Scoring</h4>
+                    <p>Scores are calculated transparently by absolute metrics—no black-box AI logic determines your eligibility.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">👥</div>
+                    <h4>Community Validation</h4>
+                    <p>Leverages peer, customer, and supplier reference parameters to turn local goodwill into numerical reality.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛡️</div>
+                    <h4>Secure Passports</h4>
+                    <p>Export elegant, verified document profiles that represent your business stability and reliability to lenders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 MarketBridge. All rights reserved. Built for global financial inclusion.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Developer Portal</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- App Entry Point (ES6 Modules) -->
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

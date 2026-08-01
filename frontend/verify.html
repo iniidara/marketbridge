@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Verification — MarketBridge</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-accent">Market</span>Bridge
+            </a>
+            <span class="badge">Verifier Portal</span>
+        </div>
+    </nav>
+
+    <main class="auth-wrapper">
+        <div class="auth-card profile-card-wide">
+            <h2 id="survey-title">Business Verification Survey</h2>
+            <p id="survey-subtitle" class="auth-subtitle">Help verify the business reliability of your trading partner [1].</p>
+
+            <div id="alert-box" class="alert hidden"></div>
+
+            <form id="survey-form" class="auth-form hidden">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="known-years">How many years have you known this trader?</label>
+                        <input type="number" id="known-years" min="0" max="80" placeholder="e.g. 3" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="trust-rating">Reliability Rating (1 to 5 Stars)</label>
+                        <select id="trust-rating" class="form-select" required>
+                            <option value="" disabled selected>Select rating</option>
+                            <option value="5">⭐⭐⭐⭐⭐ (Highly Reliable)</option>
+                            <option value="4">⭐⭐⭐⭐ (Reliable)</option>
+                            <option value="3">⭐⭐⭐ (Average)</option>
+                            <option value="2">⭐⭐ (Inconsistent)</option>
+                            <option value="1">⭐ (Unreliable)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Would you trust this trader with goods on credit?</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="would-lend" value="true" required> Yes, fully trust them
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="would-lend" value="false"> No, I would require cash payment
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="comments">Optional Comments (Your review of their character & business reliability)</label>
+                    <textarea id="comments" rows="3" placeholder="Always pays on time, highly respected in the market section..."></textarea>
+                </div>
+
+                <button type="submit" id="btn-submit" class="btn btn-primary btn-large w-100">Submit Verification Survey</button>
+            </form>
+        </div>
+    </main>
+
+    <script type="module" src="js/verify.js"></script>
+</body>
+</html>

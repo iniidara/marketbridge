@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reputation Trust Passport — MarketBridge</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="passport-body">
+    <!-- Navbar (Will be hidden when printing) -->
+    <nav class="navbar print-hidden">
+        <div class="nav-container">
+            <a href="dashboard.html" class="logo">
+                ← Back to Dashboard
+            </a>
+            <button id="btn-print" class="btn btn-primary">Download Passport PDF</button>
+        </div>
+    </nav>
+
+    <main class="passport-sheet">
+        <!-- Passport Header -->
+        <header class="passport-header-block">
+            <div class="passport-logo-section">
+                <h2>MarketBridge</h2>
+                <span>TRUST INFRASTRUCTURE PASSPORT</span>
+            </div>
+            <div id="passport-qr-code">
+                <!-- QR Code dynamically loaded -->
+            </div>
+        </header>
+
+        <!-- Profile Section -->
+        <section class="passport-section">
+            <div class="passport-profile-grid">
+                <div>
+                    <span class="label">Trading Business</span>
+                    <h3 id="passport-biz-name">Loading...</h3>
+                    <p id="passport-category-market">Loading...</p>
+                </div>
+                <div>
+                    <span class="label">Verification ID</span>
+                    <strong id="passport-id" class="monospace">MB-PENDING</strong>
+                    <br><br>
+                    <span class="label">Date Generated</span>
+                    <strong id="passport-date">Loading...</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Score Columns -->
+        <section class="passport-section border-top">
+            <h4 class="section-title-passport">Verified Score Breakdown</h4>
+            <div class="passport-score-grid">
+                <!-- Circular/Percentage metrics display -->
+                <div class="score-circle-card">
+                    <div class="score-number-display">
+                        <span id="score-overall" class="overall-big">0</span>
+                        <span class="overall-max">/100</span>
+                    </div>
+                    <strong>Overall Trust Score</strong>
+                </div>
+
+                <div class="score-text-list">
+                    <div class="score-row-item">
+                        <span>Identity Profile Completed:</span>
+                        <strong id="score-identity">0/20</strong>
+                    </div>
+                    <div class="score-row-item">
+                        <span>Business Stability Record:</span>
+                        <strong id="score-business">0/20</strong>
+                    </div>
+                    <div class="score-row-item">
+                        <span>Physical Evidence Uploads:</span>
+                        <strong id="score-evidence">0/20</strong>
+                    </div>
+                    <div class="score-row-item">
+                        <span>Community Peer Validation:</span>
+                        <strong id="score-community">0/40</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Evaluation Section -->
+        <section class="passport-section border-top">
+            <h4 class="section-title-passport">Gemini AI Reputational Explanation</h4>
+            <div id="ai-loading" class="ai-loading-box">
+                <span class="spinner"></span>
+                <span>Generating explanation analysis from Gemini API...</span>
+            </div>
+            
+            <div id="ai-content" class="ai-content-box hidden">
+                <div class="ai-block">
+                    <strong>Financial Summary:</strong>
+                    <p id="ai-summary">Evaluating...</p>
+                </div>
+                <div class="passport-profile-grid mt-24">
+                    <div>
+                        <strong class="text-success">Verified Strengths:</strong>
+                        <ul id="ai-strengths" class="bullet-list text-success-bullets"></ul>
+                    </div>
+                    <div>
+                        <strong class="text-warning-dark">Observed Vulnerabilities:</strong>
+                        <ul id="ai-weaknesses" class="bullet-list text-warning-bullets"></ul>
+                    </div>
+                </div>
+                <div class="ai-block mt-24">
+                    <strong>Steps to Improve Credit Readiness:</strong>
+                    <ul id="ai-recommendations" class="bullet-list"></ul>
+                </div>
+                <div class="ai-block mt-24 border-top-dashed">
+                    <span class="label">AI Evaluation Confidence Level:</span>
+                    <strong id="ai-confidence" class="text-success">HIGH</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Passport Footer -->
+        <footer class="passport-footer-block">
+            <p>This Trust Passport was compiled deterministically on secure servers. QR code scan verifies metadata authenticity [1].</p>
+            <span>www.marketbridge.com</span>
+        </footer>
+    </main>
+
+    <script type="module" src="js/passport-preview.js"></script>
+</body>
+</html>

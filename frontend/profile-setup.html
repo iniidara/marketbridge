@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Up Business Profile — MarketBridge</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-accent">Market</span>Bridge
+            </a>
+            <div class="nav-links">
+                <button id="btn-logout" class="btn btn-outline">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="auth-wrapper">
+        <div class="auth-card profile-card-wide">
+            <h2>Verify your trading profile</h2>
+            <p class="auth-subtitle">Complete these business details to establish your Trust Passport.</p>
+
+            <div id="alert-box" class="alert hidden"></div>
+
+            <form id="profile-form" class="auth-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="business-name">Trading Business Name</label>
+                        <input type="text" id="business-name" placeholder="Ngozi Fabric Ventures" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Business Category</label>
+                        <select id="category" class="form-select" required>
+                            <option value="" disabled selected>Select category</option>
+                            <option value="Food Vendor">Food Vendor / Catering</option>
+                            <option value="Tailor">Tailoring & Textiles</option>
+                            <option value="Artisan">Artisan / Woodworker / Welder</option>
+                            <option value="Hairdresser">Hairdresser / Barber</option>
+                            <option value="Mechanic">Mechanic / Spare Parts</option>
+                            <option value="General Retail">General Retail / Provisions</option>
+                            <option value="Agriculture">Farmer / Agro-Dealer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="years-operating">Years in Business</label>
+                        <input type="number" id="years-operating" placeholder="e.g. 4" min="0" max="80" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="market">Market Location Center</label>
+                        <input type="text" id="market" placeholder="e.g. Balogun Market" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Short Business Bio (Optional)</label>
+                    <textarea id="description" rows="3" placeholder="Tell lenders about your daily operations, sales capacity, or what goods you trade..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="shop-address">Specific Stall Address / Location Description</label>
+                    <input type="text" id="shop-address" placeholder="e.g. Stall 45, Line B, Textile Section" required>
+                </div>
+
+                <button type="submit" id="btn-save" class="btn btn-primary btn-large w-100">Save Profile & Enter Dashboard</button>
+            </form>
+        </div>
+    </main>
+
+    <script type="module" src="js/profile-setup.js"></script>
+</body>
+</html>
