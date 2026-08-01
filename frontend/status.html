@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Status — MarketBridge</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                ← Back to Home
+            </a>
+            <span class="badge">Status Portal</span>
+        </div>
+    </nav>
+
+    <main class="auth-wrapper">
+        <div class="status-card profile-card-wide" style="margin-top: 0;">
+            <div class="status-header">
+                <h3>Connection Center</h3>
+                <div id="status-badge" class="status-badge status-loading">
+                    <span class="pulse-dot"></span>
+                    <span id="status-text">Testing setup...</span>
+                </div>
+            </div>
+            <p class="status-desc">Direct cloud connection handshake checks with your deployed Render FastAPI server and Supabase PostgreSQL instance [1].</p>
+            
+            <div class="status-details">
+                <div class="status-item">
+                    <span class="label">Backend Server:</span>
+                    <span id="backend-status" class="value text-warning">Waiting</span>
+                </div>
+                <div class="status-item">
+                    <span class="label">Database Connection:</span>
+                    <span id="db-status" class="value text-warning">Waiting</span>
+                </div>
+                <div class="status-item">
+                    <span class="label">API Latency:</span>
+                    <span id="api-latency" class="value">--</span>
+                </div>
+            </div>
+
+            <div class="status-actions">
+                <button id="btn-retry-health" class="btn btn-secondary w-100">Force Re-Ping System</button>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="js/status.js"></script>
+</body>
+</html>
