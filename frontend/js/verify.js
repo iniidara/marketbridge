@@ -1,4 +1,4 @@
-const API_URL = 'http://127.0.0.1:8000';
+const API_URL = 'https://marketbridge-685x.onrender.com';
 
 const urlParams = new URLSearchParams(window.location.search);
 const token = urlParams.get('token');

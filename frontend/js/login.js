@@ -1,6 +1,6 @@
 import { MarketBridgeAPI } from './api.js';
 
-const API_URL = 'http://127.0.0.1:8000';
+const API_URL = 'https://marketbridge-685x.onrender.com';
 const SUPABASE_URL = 'https://qvtlepimthfzymawnwiz.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF2dGxlcGltdGhmenltYXdud2l6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUxNDY0MDQsImV4cCI6MjEwMDcyMjQwNH0.Zk9znYSh9uU4Z_wrZ2wuMXSV-ngvnH0a3gSKkvKNSrY';
 
