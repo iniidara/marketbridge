@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trader Dashboard — MarketBridge</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-accent">Market</span>Bridge
+            </a>
+            <div class="nav-links">
+                <a href="profile-setup.html">Edit Profile</a>
+                <button id="btn-logout" class="btn btn-secondary">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container dashboard-wrapper">
+        <!-- Header Section -->
+        <header class="dashboard-header">
+            <div>
+                <span class="badge">MarketBridge Verified Account</span>
+                <h1 id="dashboard-business-name">Loading Business...</h1>
+                <p id="dashboard-location-category">Checking profile metadata...</p>
+            </div>
+            <div>
+                <a href="profile-setup.html" class="btn btn-secondary">Edit Business Profile</a>
+            </div>
+        </header>
+
+        <!-- Trust Overview Cards -->
+        <section class="metrics-grid">
+            <div class="metric-card">
+                <span class="metric-label">Reputation Trust Score</span>
+                <div class="metric-value-container">
+                    <span id="trust-score-val" class="metric-value">0</span>
+                    <span class="metric-max">/ 100</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div id="trust-progress-bar" class="progress-bar-fill" style="width: 0%;"></div>
+                </div>
+                <p class="metric-help">Calculated deterministically based on profile, evidence, and verification.</p>
+                <a href="passport-preview.html" class="btn btn-outline mt-24">Preview & Generate Trust Passport</a>
+            </div>
+
+            <div id="passport-status-card" class="metric-card">
+                <span class="metric-label">Passport Status</span>
+                <span class="metric-status status-warning">Incomplete</span>
+                <p class="metric-desc">You must upload at least two pieces of business evidence to activate your Trust Passport.</p>
+            </div>
+        </section>
+
+        <!-- Dashboard Workspace -->
+        <section class="dashboard-workspace">
+            <!-- Left Panel: Upload Engine & Reference Invitations -->
+            <div class="upload-panel">
+                <!-- Upload Card -->
+                <div class="panel-card">
+                    <h3>Upload Business Evidence</h3>
+                    <p class="panel-desc">Add supporting verification documents to prove business stability and earn up to 20 trust points [1].</p>
+                    <div id="upload-alert" class="alert hidden"></div>
+                    <form id="upload-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="evidence-type">Evidence Category</label>
+                            <select id="evidence-type" class="form-select" required>
+                                <option value="" disabled selected>Select category</option>
+                                <option value="shop_photo">Shop Front Photo</option>
+                                <option value="inventory_photo">Inventory / Stock Photo</option>
+                                <option value="receipt">Customer Purchase Receipt</option>
+                                <option value="utility_bill">Stall Utility Bill</option>
+                                <option value="cac_certificate">CAC Registration (Optional)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="file-input">Select File (PNG or JPG, Max 5MB)</label>
+                            <input type="file" id="file-input" accept="image/png, image/jpeg, image/jpg" required>
+                        </div>
+                        <button type="submit" id="btn-upload" class="btn btn-primary w-100 btn-large">Upload Document</button>
+                    </form>
+                </div>
+
+                <!-- Reference Invitation Card -->
+                <div class="panel-card mt-24">
+                    <h3>Request Community Reference</h3>
+                    <p class="panel-desc">Invite market neighbors, regular customers, or suppliers to verify your reliability and earn up to 40 trust points [1].</p>
+                    <div id="reference-alert" class="alert hidden"></div>
+                    <form id="reference-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="ref-name">Reference Name</label>
+                            <input type="text" id="ref-name" placeholder="Alhaji Aminu" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ref-phone">Phone Number</label>
+                            <input type="tel" id="ref-phone" placeholder="e.g. +234 80 1234 5678" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ref-relationship">Relationship</label>
+                            <select id="ref-relationship" class="form-select" required>
+                                <option value="" disabled selected>Select relationship</option>
+                                <option value="Supplier">Supplier (Provides stock/materials)</option>
+                                <option value="Customer">Regular Customer (Buys from you)</option>
+                                <option value="Market Leader">Market Association Official</option>
+                                <option value="Stall Neighbor">Business Neighbor (Stall owner next door)</option>
+                            </select>
+                        </div>
+                        <button type="submit" id="btn-invite-ref" class="btn btn-outline w-100">Generate Verification Link</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right Panel: Evidence Vault & Reference Lists -->
+            <div class="vault-panel">
+                <!-- Evidence Vault -->
+                <div class="panel-card">
+                    <h3>Uploaded Evidence Vault</h3>
+                    <p class="panel-desc">Your verified documents stored securely on Supabase Storage [1].</p>
+                    <div id="empty-vault-state" class="empty-state">
+                        <div class="empty-icon">📁</div>
+                        <p>No business evidence uploaded yet.</p>
+                    </div>
+                    <div id="evidence-grid" class="evidence-preview-grid"></div>
+                </div>
+
+                <!-- Reference List Vault -->
+                <div class="panel-card mt-24">
+                    <h3>Verification References</h3>
+                    <p class="panel-desc">Track status and copy secure links to send to your verifiers [1].</p>
+                    <div id="empty-references-state" class="empty-state">
+                        <div class="empty-icon">👥</div>
+                        <p>No reference invitations generated yet.</p>
+                    </div>
+                    <div id="references-list" class="references-vault-list">
+                        <!-- Dynamic list items injected via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
